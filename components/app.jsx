@@ -9,18 +9,28 @@ class App extends React.Component {
   constructor(props) {
   	super(props)
       this.state = {
-        category: null
+        phase: 'quiz'
       }
-
   }
 
   render() {
+    var phase = this.state.phase;
+    console.log(phase);
     return (
     <div>
-      <h1>THE NAME OF THE APP</h1>
-        <Categories />
-        <Quiz />
-        <Results />
+      <h1>Trivia QuickDraw</h1>
+      <div>
+        {(function() {
+          switch(phase) {
+             case null:
+                 return <Categories />;
+             case 'quiz':
+                 return <Quiz />;
+             case 'results':
+                  return <Results />;
+          }
+        })()}
+      </div>
     </div>
     )
   }
