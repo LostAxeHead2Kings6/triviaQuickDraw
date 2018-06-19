@@ -17,8 +17,16 @@ module.exports = {
         loader : 'babel-loader',
         query: {
           presets: ['react', 'es2015']
-       }
-     }
+        }
+      },
+      {
+        test: /\.jpg$/,
+        use: [
+                {
+                    loader: 'url-loader'
+                },
+            ]
+      }
     ]
   }
 };
