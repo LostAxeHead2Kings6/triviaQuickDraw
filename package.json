@@ -1,0 +1,38 @@
+{
+  "name": "triviaquickdraw",
+  "version": "1.0.0",
+  "description": "test your knowledge in one of 6 categories!",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LostAxeHead2Kings6/triviaQuickDraw.git"
+  },
+  "keywords": [
+    "trivia",
+    "react",
+    "ui"
+  ],
+  "author": "Michael Vasios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LostAxeHead2Kings6/triviaQuickDraw/issues"
+  },
+  "homepage": "https://github.com/LostAxeHead2Kings6/triviaQuickDraw#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
