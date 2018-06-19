@@ -1,18 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-//import Banner from 'categoryBanner.jsx'
+import Categories from './categoryBanner.jsx'
+import Quiz from './quiz.jsx'
+import Results from './results.jsx'
 
 class App extends React.Component {
   constructor(props) {
   	super(props)
+      this.state = {
+        category: null
+      }
+
   }
 
   render() {
     return (
-      <h1>Le Voici</h1>
+    <div>
+      <h1>THE NAME OF THE APP</h1>
+        <Categories />
+        <Quiz />
+        <Results />
+    </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
