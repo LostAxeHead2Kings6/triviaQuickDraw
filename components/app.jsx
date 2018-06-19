@@ -58,22 +58,23 @@ class App extends React.Component {
     var showResults = this.showResults;
 
     return (
-    <div>
-      <h1>Trivia QuickDraw</h1>
       <div>
-        {(function() {
-          switch(phase) {
-             case 'selectCategory':
-                 return <Categories handleClick={chooseCategory} />;
-             case 'quiz':
-                 return <Quiz questions={questions}  onCompletion={showResults} />;
-             case 'results':
-                  return <Results category={categoryNum} score={score} playAgain={playAgain} />;
-          }
-        })()}
+        <h1>Trivia QuickDraw</h1>
+        <div>
+          {(function() {
+            switch(phase) {
+               case 'selectCategory':
+                   return <Categories handleClick={chooseCategory} />;
+               case 'quiz':
+                   return <Quiz questions={questions}  onCompletion={showResults} />;
+               case 'results':
+                    return <Results category={categoryNum} score={score} playAgain={playAgain} />;
+            }
+          })()}
+        </div>
       </div>
-    </div>
     )
+
   }
 }
 
