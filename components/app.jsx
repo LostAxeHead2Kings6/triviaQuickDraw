@@ -58,8 +58,6 @@ class App extends React.Component {
     var showResults = this.showResults;
 
     return (
-      <div>
-        <h1>Trivia QuickDraw</h1>
         <div>
           {(function() {
             switch(phase) {
@@ -72,7 +70,6 @@ class App extends React.Component {
             }
           })()}
         </div>
-      </div>
     )
 
   }

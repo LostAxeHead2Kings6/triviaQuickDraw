@@ -38,7 +38,7 @@ class Quiz extends React.Component {
     var score = this.state.score;
 
     if (answer === this.state.answer) {
-      var score+=1;
+      score += 1;
       this.setState({score: this.state.score+1});
     }
 
