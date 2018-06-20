@@ -4,7 +4,7 @@ function Results(props) {
   return (
        <div>
            THE Results: {props.score}
-           <button onClick={props.playAgain} />
+           <button type="button" onClick={props.playAgain}>Try Again?</button>
        </div>
    );
 }

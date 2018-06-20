@@ -35,15 +35,15 @@ class Quiz extends React.Component {
   }
 
   handleUserAnswer(answer) {
-    this.checkAccuracy(answer);
-    if (this.state.questionIndex === 4 ) this.props.onCompletion(this.state.score);
-    else this.nextQuestion();
-  }
+    var score = this.state.score;
 
-  checkAccuracy(answer) {
-    console.log(answer, this.state.answer);
-    if (answer === this.state.answer) this.setState({score: this.state.score+1});
-    console.log(this.state.score);
+    if (answer === this.state.answer) {
+      var score+=1;
+      this.setState({score: this.state.score+1});
+    }
+
+    if (this.state.questionIndex === 4 ) this.props.onCompletion(score);
+    else this.nextQuestion();
   }
 
   nextQuestion() {
@@ -57,7 +57,6 @@ class Quiz extends React.Component {
         answerChoices: this.shuffleAnswerChoices(combinedAnswers)
     });
 
-    console.log("state:", this.state);
   }
 
   renderAnswerOptions(answer, func) {
