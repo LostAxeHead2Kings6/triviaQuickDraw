@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Results() {
+function Results(props) {
   return (
        <div>
-           THE Results;
-           <button onClick={playAgain} />
+           THE Results: {props.score}
+           <button onClick={props.playAgain} />
        </div>
    );
 }

@@ -68,7 +68,7 @@ class App extends React.Component {
                case 'quiz':
                    return <Quiz questions={questions}  onCompletion={showResults} />;
                case 'results':
-                    return <Results category={categoryNum} score={score} playAgain={playAgain} />;
+                    return <Results category={categoryNum} score={score}  playAgain={playAgain} />;
             }
           })()}
         </div>
