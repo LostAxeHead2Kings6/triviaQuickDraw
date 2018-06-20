@@ -10,7 +10,7 @@ import {Carousel} from 'react-bootstrap';
 function Categories(props) {
   return (
        <div>
-        <h1>Select a subject</h1>
+        <h1>What will todays exam be on </h1>
         <Carousel id="categoryCarousel">
           <Carousel.Item>
             <img src={science} height={500} class="categoryPic" alt="science" onClick={()=> props.handleClick(17)} />
