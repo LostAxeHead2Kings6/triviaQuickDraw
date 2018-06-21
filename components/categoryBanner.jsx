@@ -1,10 +1,10 @@
 import React from 'react'
-import Art from '../images/art.jpg'
-import Geography from '../images/geography2.jpg'
-import History from '../images/history2.jpg'
-import Literature from '../images/literature.jpg'
-import Math from '../images/math2a.jpg'
-import Science from '../images/science2.jpg'
+import Art from '../images/art.png'
+import Geography from '../images/geography2.png'
+import History from '../images/history.png'
+import Literature from '../images/literature.png'
+import Math from '../images/math2a.png'
+import Science from '../images/science2.png'
 import {Carousel} from 'react-bootstrap'
 
 function Categories(props) {

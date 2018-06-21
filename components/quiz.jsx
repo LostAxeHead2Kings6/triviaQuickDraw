@@ -1,5 +1,5 @@
 import React from 'react'
-import notecard from '../notecard3.jpg'
+import notecard from '../images/notecard3.jpg'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Quiz extends React.Component {
@@ -64,11 +64,14 @@ class Quiz extends React.Component {
   //this prevents HTML entities from appearing in Question displays
   decodeHTMLEntities(text) {
     var entities = {
-    '#039': "'",
-    'quot': '"',
-    'ldquo': '"',
-    'rdquo': '"',
-    'rsquo' : "'"
+      '#039': "'",
+      'quot': '"',
+      'ldquo': '"',
+      'rdquo': '"',
+      'rsquo' : "'",
+      'eacute' : '`',
+      '&uuml': 'ü',
+      '&deg': '°'
     }
     return text.replace(/&([^;]+);/gm, function (match, entity) {
       return entities[entity] || match
@@ -103,7 +106,7 @@ class Quiz extends React.Component {
             <p>{this.decodeHTMLEntities(this.state.currentQuestion)}</p>
           </div>
           <ul className="answerOptions">
-            {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(ans, this.handleUserAnswer))}
+            {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(this.decodeHTMLEntities(ans), this.handleUserAnswer))}
           </ul>
         </div>
       </ReactCSSTransitionGroup>

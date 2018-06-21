@@ -30,9 +30,11 @@ function Results(props) {
            <td class="cardNotes">{grades[props.score]}</td>
          </tr>
        </Table>
-       <Button style={{backgroundColor: 'black', color: '#fff1ad', margin: '10 auto'}}
-               bsStyle="primary" bsSize="large" onClick={props.playAgain}>Play Again?
-       </Button>
+       <div style={{textAlign: 'center'}}>
+         <Button bsStyle="primary" bsSize="large" onClick={props.playAgain}>
+             Play Again?
+          </Button>
+       </div>
       </div>
     </ReactCSSTransitionGroup>
   );

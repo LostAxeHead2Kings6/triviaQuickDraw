@@ -1,44 +1,4 @@
-/* Transitions */
-
-  .container {
-    position: relative;
-    margin: 0 auto;
-    background: #fff;
-  }
-
-  .fade-enter {
-    opacity: 0;
-  }
-
-  .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out 0.3s;
-  }
-
-  .fade-leave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 98%;
-    opacity: 1;
-  }
-
-  .fade-leave.fade-leave-active {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .fade-appear {
-    opacity: 0;
-  }
-
-  .fade-appear.fade-appear-active {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
-
 /* Header */
-
 #banner {
   position: relative;
 }
@@ -52,12 +12,19 @@
   left: 10%;
   top: 10%;
   font-size: 14vw;
-  font-family: Permanent Marker, cursive;
+  font-family: Permanent Marker, Impact, cursive;
+}
+
+#pencil {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 /* Category Selector */
 h1 {
-  font-family: Coming Soon, cursive;
+  font-family: Coming Soon, Courier New, cursive;
   font-size: 4vw;
   margin: 0 auto;
 }
@@ -65,6 +32,7 @@ h1 {
 .categoryPic {
   margin: 0 auto;
   transition: transform .2s; /* Animation */
+  z-index: -2;
 }
 
 .categoryPic:hover {
@@ -92,24 +60,17 @@ h1 {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  font-family: Permanent Marker, cursive;
-  border: 1px solid green;
+  font-family: Permanent Marker, Impact, cursive;
+  background-color: 'green';
 }
 
 #questionCard p {
   position: absolute;
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
   font-size: 4.5vw;
-}
-
-#questionCard p .smaller {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3 vw;
 }
 
 .answerOptions {
@@ -117,7 +78,7 @@ h1 {
   margin: 0 auto;
   width: 33vw;
   list-style-type: none;
-  font-family: Coming Soon, cursive;
+  font-family: Coming Soon, Courier New, cursive;
   font-size: 2.75vw;
 }
 
@@ -126,21 +87,23 @@ h1 {
 }
 
 li:hover {
-  background-color: #ADD8E6;
+  color: #ADD8E6;
 }
 
 /* results component */
 #reportCard {
   font-family: Times New Roman, Times, serif;
-  text-align: center;
   margin: 0 auto;
   width: 60%;
   height: 30vw;
   background-color: #fff1ad;
+  background: url('images/yellowPaper.jpg') no-repeat;
+  background-blend-mode: color;
   border-radius: 25px;
 }
 
 #reportCard h3 {
+  text-align: center;
   font-size: 6vw;
   background-color: black;
   color: #fff1ad;
@@ -164,5 +127,44 @@ td {
 
 .cardNotes {
   color: red;
-  font-family: Gaegu, cursive;
+  font-family: Permanent Marker, Impact, cursive;
+}
+
+/* Transitions */
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
