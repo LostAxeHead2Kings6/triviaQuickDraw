@@ -1,6 +1,6 @@
 import React from 'react'
-import AnswerChoice from './answerChoice.jsx'
 import notecard from '../notecard3.jpg'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -17,9 +17,9 @@ class Quiz extends React.Component {
 
   componentWillMount() {
     //this makes a fused array of the correct answer
-    //mingles with the incorrect answer
-
-    const combinedAnswers = [].concat(this.props.questions[0].incorrect_answers, [this.props.questions[0].correct_answer]);
+    //mingled with the incorrect answer
+    const combinedAnswers = [].concat(this.props.questions[0].incorrect_answers,
+                                      [this.props.questions[0].correct_answer]);
 
     this.setState({
       currentQuestion: this.props.questions[0].question,
@@ -50,7 +50,8 @@ class Quiz extends React.Component {
 
   nextQuestion() {
     const questionIndex = this.state.questionIndex + 1;
-    const nextAnswers = [].concat(this.props.questions[questionIndex].incorrect_answers, [this.props.questions[questionIndex].correct_answer]);
+    const nextAnswers = [].concat(this.props.questions[questionIndex].incorrect_answers,
+                                  [this.props.questions[questionIndex].correct_answer]);
 
     this.setState({
         questionIndex: questionIndex,
@@ -60,13 +61,14 @@ class Quiz extends React.Component {
     });
   }
 
-  //this prevents HTML entities from appearing in Answer displays
+  //this prevents HTML entities from appearing in Question displays
   decodeHTMLEntities(text) {
     var entities = {
     '#039': "'",
     'quot': '"',
     'ldquo': '"',
-    'rdquo': '"'
+    'rdquo': '"',
+    'rsquo' : "'"
     }
     return text.replace(/&([^;]+);/gm, function (match, entity) {
       return entities[entity] || match
@@ -75,21 +77,35 @@ class Quiz extends React.Component {
 
   renderAnswerOptions(answer, func) {
     return (
-      <AnswerChoice answer={answer} submitChoice={func} />
+      <li className="answerOption"
+          onClick={(e)=>func(answer)}
+          type="A">
+          {answer}
+      </li>
     );
   }
 
   render() {
     return (
-      <div id="quizContainer">
-        <div id="questionCard">
-          <img src={notecard} style={{width: '66%'}} alt="notecard" />
-          <p>{this.decodeHTMLEntities(this.state.currentQuestion)}</p>
+      <ReactCSSTransitionGroup
+        className="container"
+        component="div"
+        transitionName="fade"
+        transitionEnterTimeout={800}
+        transitionLeaveTimeout={500}
+        transitionAppear
+        transitionAppearTimeout={500}
+      >
+        <div key={this.state.questionIndex}>
+          <div id="questionCard">
+            <img src={notecard} style={{width: '66%'}} alt="notecard" />
+            <p>{this.decodeHTMLEntities(this.state.currentQuestion)}</p>
+          </div>
+          <ul className="answerOptions">
+            {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(ans, this.handleUserAnswer))}
+          </ul>
         </div>
-        <ul className="answerOptions">
-          {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(ans, this.handleUserAnswer))}
-        </ul>
-      </div>
+      </ReactCSSTransitionGroup>
     )
   }
 }
