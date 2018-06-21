@@ -5,8 +5,7 @@ function AnswerChoice(props) {
   return (
     <li className="answerOption"
         onClick={(e)=>props.submitChoice(`${props.answer}`)}
-        id={props.answer}
-        value={props.answer}
+        type="A"
     >
         {props.answer}
     </li>

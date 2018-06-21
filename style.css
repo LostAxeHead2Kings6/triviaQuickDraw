@@ -14,8 +14,6 @@
   font-size: 8vw;
   font-family: Permanent Marker, cursive;
 }
-#categoryCarousel {
-}
 
 .categoryPic {
   margin: 0 auto;
@@ -28,5 +26,82 @@
 
 .categoryCaption {
   color: black;
-  font-family: 'Gaegu', cursive;
+  font-size: 5vw;
+  font-family: Gaegu, cursive;
+}
+
+#questionCard {
+  position: relative;
+  text-align: center;
+  font-family: Permanent Marker, cursive;
+}
+
+#questionCard p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.5vw;
+}
+
+.answerOptions {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  list-style-type: none;
+  font-family: Coming Soon, cursive;
+  font-size: 2.75vw;
+}
+
+.answerOptions li {
+  border: 1px solid #eee;
+}
+
+li:hover {
+  background-color: #ADD8E6;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none
+}
+
+.carousel-control {
+  opacity:100;
+}
+
+table {
+  width: 100%;
+}
+
+/* results component */
+#reportCard {
+  font-family: Times New Roman, Times, serif;
+  margin: 0 auto;
+  width: 60%;
+  height: 30vw;
+  background-color: #fff1ad;
+  border-radius: 25px;
+}
+
+#reportCard h3 {
+  font-size: 6vw;
+  text-align: center;
+  background-color: black;
+  color: #fff1ad;
+  border-radius: 25px 25px 0px 0px;
+}
+
+table tr td {
+  border: 1px solid black;
+}
+
+td {
+  font-size: 3vw;
+  position: relative;
+  left: 2vw;
+}
+
+.cardNotes {
+  color: red;
+  font-family: Gaegu, cursive;
 }

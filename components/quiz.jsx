@@ -1,6 +1,7 @@
 import React from 'react'
 import Question from './question.jsx'
 import AnswerChoice from './answerChoice.jsx'
+import notecard from '../notecard3.jpg'
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -56,7 +57,18 @@ class Quiz extends React.Component {
         answer: this.props.questions[questionIndex].correct_answer,
         answerChoices: this.shuffleAnswerChoices(combinedAnswers)
     });
+  }
 
+  decodeHTMLEntities(text) {
+    var entities = {
+    '#039': "'",
+    'quot': '"',
+    'ldquo': '"',
+    'rdquo': '"'
+    }
+    return text.replace(/&([^;]+);/gm, function (match, entity) {
+      return entities[entity] || match
+    })
   }
 
   renderAnswerOptions(answer, func) {
@@ -66,20 +78,18 @@ class Quiz extends React.Component {
   }
 
   render() {
-
     return (
-       <div>
-           <h1>THE QUIZ</h1>
-           <div>
-            <Question content={this.state.currentQuestion} />
-              <ul className="answerOptions">
-                {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(ans, this.handleUserAnswer))}
-              </ul>
-          </div>
-       </div>
+      <div id="quizContainer">
+        <div id="questionCard">
+          <img src={notecard} style={{width: '66%'}} alt="notecard" />
+          <p>{this.decodeHTMLEntities(this.state.currentQuestion)}</p>
+        </div>
+        <ul className="answerOptions">
+          {this.state.answerChoices.map((ans)=>this.renderAnswerOptions(ans, this.handleUserAnswer))}
+        </ul>
+      </div>
     )
   }
-
 }
 
 
