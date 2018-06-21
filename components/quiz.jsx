@@ -1,5 +1,4 @@
 import React from 'react'
-import Question from './question.jsx'
 import AnswerChoice from './answerChoice.jsx'
 import notecard from '../notecard3.jpg'
 
@@ -17,6 +16,9 @@ class Quiz extends React.Component {
   }
 
   componentWillMount() {
+    //this makes a fused array of the correct answer
+    //mingles with the incorrect answer
+
     const combinedAnswers = [].concat(this.props.questions[0].incorrect_answers, [this.props.questions[0].correct_answer]);
 
     this.setState({
@@ -24,7 +26,6 @@ class Quiz extends React.Component {
       answer: this.props.questions[0].correct_answer,
       answerChoices: this.shuffleAnswerChoices(combinedAnswers)
     })
-
   }
 
   shuffleAnswerChoices(arr) {
@@ -49,16 +50,17 @@ class Quiz extends React.Component {
 
   nextQuestion() {
     const questionIndex = this.state.questionIndex + 1;
-    const combinedAnswers = [].concat(this.props.questions[questionIndex].incorrect_answers, [this.props.questions[questionIndex].correct_answer]);
+    const nextAnswers = [].concat(this.props.questions[questionIndex].incorrect_answers, [this.props.questions[questionIndex].correct_answer]);
 
     this.setState({
         questionIndex: questionIndex,
         currentQuestion: this.props.questions[questionIndex].question,
         answer: this.props.questions[questionIndex].correct_answer,
-        answerChoices: this.shuffleAnswerChoices(combinedAnswers)
+        answerChoices: this.shuffleAnswerChoices(nextAnswers)
     });
   }
 
+  //this prevents HTML entities from appearing in Answer displays
   decodeHTMLEntities(text) {
     var entities = {
     '#039': "'",

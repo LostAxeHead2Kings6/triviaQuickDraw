@@ -22,9 +22,7 @@ class App extends React.Component {
 
   chooseCategory(categoryNum) {
     axios.get(`https://opentdb.com/api.php?amount=5&category=${categoryNum}&difficulty=medium&type=multiple`)
-    .then((response) => {
-      console.log(response.data.results);
-      this.setState({
+    .then((response) => {      this.setState({
         questions: response.data.results,
         phase: 'quiz',
         categoryNum: categoryNum
@@ -49,6 +47,8 @@ class App extends React.Component {
   }
 
   render() {
+    //this is necessary so the 'this' keyword does
+    //not lose context in the Anonymous function on line 62
     var categoryNum = this.state.categoryNum;
     var phase = this.state.phase;
     var questions = this.state.questions;
@@ -62,11 +62,20 @@ class App extends React.Component {
           {(function() {
             switch(phase) {
                case 'selectCategory':
-                   return <Categories handleClick={chooseCategory} />;
+                   return <Categories
+                            handleClick={chooseCategory}
+                          />;
                case 'quiz':
-                   return <Quiz questions={questions}  onCompletion={showResults} />;
+                   return <Quiz
+                            questions={questions}
+                            onCompletion={showResults}
+                          />;
                case 'results':
-                    return <Results category={categoryNum} score={score} playAgain={playAgain} />;
+                    return <Results
+                            category={categoryNum}
+                            score={score}
+                            playAgain={playAgain}
+                          />;
             }
           })()}
         </div>

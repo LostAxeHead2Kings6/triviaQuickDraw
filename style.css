@@ -1,3 +1,5 @@
+/* Header */
+
 #banner {
   position: relative;
 }
@@ -10,9 +12,16 @@
 #banner h1 {
   position: absolute;
   left: 10%;
-  top: 20%;
-  font-size: 8vw;
+  top: 10%;
+  font-size: 14vw;
   font-family: Permanent Marker, cursive;
+}
+
+/* Category Selector */
+h1 {
+  font-family: Coming Soon, cursive;
+  font-size: 4vw;
+  margin: 0 auto;
 }
 
 .categoryPic {
@@ -29,6 +38,16 @@
   font-size: 5vw;
   font-family: Gaegu, cursive;
 }
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none
+}
+
+.carousel-control {
+  opacity:100;
+}
+
+/* Quiz */
 
 #questionCard {
   position: relative;
@@ -61,21 +80,10 @@ li:hover {
   background-color: #ADD8E6;
 }
 
-.carousel-control.left, .carousel-control.right {
-  background-image: none
-}
-
-.carousel-control {
-  opacity:100;
-}
-
-table {
-  width: 100%;
-}
-
 /* results component */
 #reportCard {
   font-family: Times New Roman, Times, serif;
+  text-align: center;
   margin: 0 auto;
   width: 60%;
   height: 30vw;
@@ -85,10 +93,13 @@ table {
 
 #reportCard h3 {
   font-size: 6vw;
-  text-align: center;
   background-color: black;
   color: #fff1ad;
   border-radius: 25px 25px 0px 0px;
+}
+
+table {
+  width: 100%;
 }
 
 table tr td {
