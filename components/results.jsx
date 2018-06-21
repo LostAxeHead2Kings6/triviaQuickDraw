@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
+import {Button, Table} from 'react-bootstrap'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
@@ -16,7 +16,7 @@ function Results(props) {
      >
       <div id="reportCard">
        <h3>REPORT CARD</h3>
-       <table>
+       <Table>
          <tr>
            <td><strong>Subject</strong></td>
            <td class="cardNotes">{subjects[props.category]}</td>
@@ -29,7 +29,7 @@ function Results(props) {
            <td><strong>Grade</strong></td>
            <td class="cardNotes">{grades[props.score]}</td>
          </tr>
-       </table>
+       </Table>
        <Button style={{backgroundColor: 'black', color: '#fff1ad', margin: '10 auto'}}
                bsStyle="primary" bsSize="large" onClick={props.playAgain}>Play Again?
        </Button>

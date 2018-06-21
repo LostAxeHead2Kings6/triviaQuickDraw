@@ -75,6 +75,7 @@ class Quiz extends React.Component {
     })
   }
 
+
   renderAnswerOptions(answer, func) {
     return (
       <li className="answerOption"
@@ -98,7 +99,7 @@ class Quiz extends React.Component {
       >
         <div key={this.state.questionIndex}>
           <div id="questionCard">
-            <img src={notecard} style={{width: '66%'}} alt="notecard" />
+            <img src={notecard} alt="notecard" />
             <p>{this.decodeHTMLEntities(this.state.currentQuestion)}</p>
           </div>
           <ul className="answerOptions">

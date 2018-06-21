@@ -19,7 +19,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 98%;
     opacity: 1;
   }
 
@@ -89,8 +89,11 @@ h1 {
 
 #questionCard {
   position: relative;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   font-family: Permanent Marker, cursive;
+  border: 1px solid green;
 }
 
 #questionCard p {
@@ -101,10 +104,18 @@ h1 {
   font-size: 4.5vw;
 }
 
+#questionCard p .smaller {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3 vw;
+}
+
 .answerOptions {
   position: relative;
   margin: 0 auto;
-  width: 300px;
+  width: 33vw;
   list-style-type: none;
   font-family: Coming Soon, cursive;
   font-size: 2.75vw;
